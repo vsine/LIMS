@@ -1,5 +1,5 @@
 <?php
-$html=<<<EOT
+$html= <<<EOT
 <!DOCTYPE html>
 <html>
 <head>
@@ -180,13 +180,13 @@ $html=<<<EOT
          window.location.href = 'informaction.html';
      }
      function uu(){
-         var user=document.getElementById("username");
-         var pasw=document.getElementById("password");
-         var enctool=new JSEncrypt();
+         const user=document.getElementById("username");
+         const pasw=document.getElementById("password");
+         const enctool=new JSEncrypt();
          enctool.setPublicKey(publicKeyStr);
-         var enuser=enctool.encryptLong(user.value);
+         let enuser=enctool.encryptLong(user.value);
          enuser= urlsafeDecode(enuser);
-         var enpasw=enctool.encryptLong(pasw.value);
+         let enpasw=enctool.encryptLong(pasw.value);
          enpasw=urlsafeDecode(enpasw);
          document.cookie="username="+enuser;
          document.cookie="password="+enpasw;

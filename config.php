@@ -2,7 +2,7 @@
 $GLOBALS['sqlUser']='ims_kernel';
 $GLOBALS['sqlPass']='asd125737';
 $GLOBALS['sqlDatabase']='ims_kernel';
-$GLOBALS['sqlHost']='jet.qvqol.com';
+$GLOBALS['sqlHost']='api.qvqol.com';
 $GLOBALS['publickey']= <<<KEY
 -----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGdiNW38TIiIpZ2nugSk0AgXNQ
