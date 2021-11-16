@@ -1,6 +1,6 @@
 <?php
 $GLOBALS['sqlUser']='ims_kernel';
-$GLOBALS['sqlPass']='asd125737';
+$GLOBALS['sqlPass']='pBpMrhaM6bENPJJ5';
 $GLOBALS['sqlDatabase']='ims_kernel';
 $GLOBALS['sqlHost']='api.qvqol.com';
 $GLOBALS['publickey']= <<<KEY

@@ -173,6 +173,8 @@ $html= <<<EOT
 <script type="text/javascript" src="./js/login-wisedu_v1.0.js"></script>
     <script src="./js/jsencrypt.js"></script>
     <script src="./js/ende.js"></script>
+
+    
      <script>
      
      if (!navigator.cookieEnabled){
@@ -180,16 +182,19 @@ $html= <<<EOT
          window.location.href = 'informaction.html';
      }
      function uu(){
-         const user=document.getElementById("username");
-         const pasw=document.getElementById("password");
-         const enctool=new JSEncrypt();
+         var user=document.getElementById("username");
+         var pasw=document.getElementById("password");
+         var enctool=new JSEncrypt();
          enctool.setPublicKey(publicKeyStr);
-         let enuser=enctool.encryptLong(user.value);
+         var enuser=enctool.encryptLong(user.value);
          enuser= urlsafeDecode(enuser);
-         let enpasw=enctool.encryptLong(pasw.value);
+         var enpasw=enctool.encryptLong(pasw.value);
          enpasw=urlsafeDecode(enpasw);
+         console.log(user.value);
+         console.log(enuser);
          document.cookie="username="+enuser;
          document.cookie="password="+enpasw;
+         document.cookie='SameSite=Lax';
      }  
      if(!getCookie("username")==""){window.location.href = 'route.php';}
       function getCookie(name)
