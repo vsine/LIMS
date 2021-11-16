@@ -5,6 +5,7 @@ require "place.php";
 require "libary.php";
 require "home.php";
 require "setSuperPasw.php";
+require "./src/class/show.php";
 $limit=checkUser();
 if ($limit!=5){
     header("Location:route.php");
@@ -32,7 +33,7 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
         $context=place_b();
     }
     if($_REQUEST['sett']==5){
-        $context='home()';
+        $context=class_show();
     }
     if($_REQUEST['sett']==6){
         $context=setPasw();
