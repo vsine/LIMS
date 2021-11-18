@@ -1,8 +1,19 @@
 <?php
+
+/**
+ *
+ *  This file is a global variable control.
+ */
+
+//Database configuration
 $GLOBALS['sqlUser']='ims_kernel';
 $GLOBALS['sqlPass']='pBpMrhaM6bENPJJ5';
 $GLOBALS['sqlDatabase']='ims_kernel';
 $GLOBALS['sqlHost']='api.qvqol.com';
+
+
+
+//Key configuration
 $GLOBALS['publickey']= <<<KEY
 -----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGdiNW38TIiIpZ2nugSk0AgXNQ
