@@ -13,18 +13,14 @@ function checkUser(){
         $user=str_replace(' ','+',$user);
         $pasw=str_replace(' ','+',$pasw);
         $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
-
         $depasw=RsaUtils::privateDecrypt($pasw,$GLOBALS['privatekey']);
         $depasw=str_replace(' ','+',$depasw);
         $sql="select password from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
         if($redata->num_rows<1)
-        { setcookie("username","");
+        {   setcookie("username","");
             setcookie("password","");
-
-            //echo 'user:'.$user.'</br>';
-            //echo 'deuser:'.$deuser;
             header("Location:index.php");
             exit();
         }
