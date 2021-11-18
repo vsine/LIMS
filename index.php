@@ -116,7 +116,7 @@ $html= <<<EOT
                         <p id="cpatchaDiv">
                         </p>
                         <p>
-                                <button type=""
+                                <button 
                                         class="auth_login_btn primary full_width" onclick="uu()">登&emsp;录
                                 </button>
                             

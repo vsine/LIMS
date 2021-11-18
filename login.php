@@ -41,7 +41,7 @@ $html= <<<EOT
         <h2 class="form-signin-heading">管理后台-请登录</h2>
         <h6></h6>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="user" id="inputEmail" class="form-control" placeholder="请输入账号" required autofocus>
+        <input  id="inputEmail" class="form-control" placeholder="请输入账号" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required>
         <div class="checkbox">
