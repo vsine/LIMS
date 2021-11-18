@@ -1,5 +1,6 @@
 <?php
-function class_show(){
+function class_show(): string
+{
 
     return 'test';
 }
