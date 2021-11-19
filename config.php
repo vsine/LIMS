@@ -13,6 +13,13 @@ $GLOBALS['sqlHost']='api.qvqol.com';
 
 
 
+
+
+
+
+
+
+
 //Key configuration
 $GLOBALS['publickey']= <<<KEY
 -----BEGIN PUBLIC KEY-----
