@@ -363,12 +363,10 @@ function place_b(){
 
     $("#isec").val("-1");
     function OnClickAdd(){
-
     let user=getCookie("username");
     let pasw=getCookie("password");
     let name=document.getElementById("inputName");
     let name1=document.getElementById("inputName1");
-    
     let onc=document.getElementById('ddc');
     onc.className+=' disabled';
     let xhr = new XMLHttpRequest();
@@ -403,7 +401,9 @@ function place_b(){
         let name=document.getElementById("iName");
         let name1=document.getElementById("iName1");
         let onc=document.getElementById('edit');
+        let onc1=document.getElementById('remove');
         onc.className+=' disabled';
+        onc1.className+=' disabled';
         let xhr = new XMLHttpRequest();
         xhr.open('GET', './api/api.php?ca=5&n1='+user+'&n2='+pasw+'&n3='+name.value+'&n4='+name1.value+'&n5='+$("#iisec").val(), false);
         xhr.send();
@@ -419,7 +419,9 @@ function place_b(){
         let pasw=getCookie("password");
         let name=document.getElementById("iName");
         let onc=document.getElementById('edit');
+        let onc1=document.getElementById('remove');
         onc.className+=' disabled';
+        onc1.className+=' disabled';
         let xhr = new XMLHttpRequest();
         xhr.open('GET', './api/api.php?ca=6&n1='+user+'&n2='+pasw+'&n3='+name.value, false);
         xhr.send();
