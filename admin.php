@@ -1,9 +1,9 @@
 <?php
 
 require "check.php";
-require "place.php";
+require "./src/place/place.php";
 require "libary.php";
-require "home.php";
+//require "home.php";
 require "setSuperPasw.php";
 require "./src/class/show.php";
 $limit=checkUser();
