@@ -50,5 +50,11 @@ if ($ca==5&&$limit<8){
     $sql="update place_b set place='$n4', aid='$n5' where id='$n3'";
     $mysqli->query($sql);
 }
+//删除货位
+if ($ca==5&&$limit<8){
+    $n3=$_GET["n3"];
+    $sql="delete from place_b where id='$n3'";
+    $mysqli->query($sql);
+}
 
 echo "1";
