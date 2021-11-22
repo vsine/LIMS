@@ -414,6 +414,9 @@ function place_b(){
         }
         
     }
+    function OnClickRemove(){
+        
+    }
 
 </script>
 EOR;
