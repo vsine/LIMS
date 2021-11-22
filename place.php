@@ -280,7 +280,7 @@ function place_b(){
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal" id="remove">删除</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="remove" onclick="OnClickRemove()">删除</button>
         <button id="edit" type="button" class="btn btn-primary" onclick="OnClickUpdate()">更新</button>
       </div>
     </div>
@@ -415,7 +415,19 @@ function place_b(){
         
     }
     function OnClickRemove(){
-        
+        let user=getCookie("username");
+        let pasw=getCookie("password");
+        let name=document.getElementById("iName");
+        let onc=document.getElementById('edit');
+        onc.className+=' disabled';
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', './api/api.php?ca=6&n1='+user+'&n2='+pasw+'&n3='+name.value, false);
+        xhr.send();
+        if(xhr.status===200){
+            location.reload();
+        }else {
+            location.reload();
+        }
     }
 
 </script>
