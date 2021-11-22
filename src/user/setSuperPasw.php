@@ -1,7 +1,7 @@
 <?php
 
 function setPasw(){
-    $html =<<<EOT
+    $html = <<<EOT
 <form class="form-horizontal">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">原密码</label>
@@ -27,8 +27,8 @@ function setPasw(){
     </div>
   </div>
 </form>
-    <script src="./js/jsencrypt.js"></script>
-    <script src="./js/ende.js"></script>
+    <script src="../../js/jsencrypt.js"></script>
+    <script src="../../js/ende.js"></script>
 <script>
 function OnClickAdd() {
     var user=getCookie("username");
