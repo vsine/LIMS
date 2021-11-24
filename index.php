@@ -80,10 +80,6 @@ $html= <<<EOT
     
         
         
-            
-        
-        
-    
     <div class="auth_login_right">
         <div class="auth_tab">
 
