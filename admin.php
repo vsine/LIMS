@@ -41,17 +41,10 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     if($_REQUEST['sett']==7){
         $context=setPasw();
     }
-
-
-
-
-
-
 }else{
     $array[0]='class="active"';
     $context=libary();
 }
-
 $html=<<<EOT
 
 <!DOCTYPE html>
