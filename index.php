@@ -125,11 +125,6 @@ $html= <<<EOT
                     </form>
                 </div>
 
-                
-                
-   
-              
-                
             </div>
         </div>
     </div>
