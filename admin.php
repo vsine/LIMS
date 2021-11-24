@@ -126,9 +126,6 @@ $html=<<<EOT
             <li><a href="?sett=5"  >账号管理</a></li>
             <li><a href="?sett=6"  >超级管理员密码修改</a></li>
             <li><a href="" data-toggle="modal" data-target="#myModal">登出</a></li>
-           
-           
-            
           </ul>
          
         </div>
