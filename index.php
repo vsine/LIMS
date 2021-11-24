@@ -149,7 +149,7 @@ $html= <<<EOT
     
 
  <span>
-     Copyright&nbsp;©&nbsp;2020;&nbsp;东莞职业技术学院
+     Copyright&nbsp;©&nbsp;2021;&nbsp;东莞职业技术学院
  </span>
 
 </div>
