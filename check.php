@@ -43,7 +43,6 @@ function checkUser(){
         exit("未登录");
     }
 }
-
 function checkUserFromString($user,$pasw){
     $db_user=$GLOBALS['sqlUser'];
     $db_pass=$GLOBALS['sqlPass'];
