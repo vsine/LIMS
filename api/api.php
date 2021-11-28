@@ -14,14 +14,14 @@ $limit=checkUserFromString($user,$pasw);
 if ($limit==-1)
     exit();
 //添加仓库
-if ($ca==1&&$limit<6){
+if ($ca==1&&$limit<5){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $sql="insert into place_a values ('$n3','$n4')";
     $mysqli->query($sql);
 }
 //更新仓库
-if ($ca==2&&$limit<6){
+if ($ca==2&&$limit<5){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $sql="update place_a set place='$n4' where id='$n3'";
@@ -35,7 +35,7 @@ if ($ca==3&&$limit<6){
     $mysqli->query($sql);
 }
 //添加货位
-if ($ca==4&&$limit<8){
+if ($ca==4&&$limit<7){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n5=$_GET["n5"];
@@ -43,7 +43,7 @@ if ($ca==4&&$limit<8){
     $mysqli->query($sql);
 }
 //更新货位
-if ($ca==5&&$limit<8){
+if ($ca==5&&$limit<7){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n5=$_GET["n5"];
@@ -51,10 +51,11 @@ if ($ca==5&&$limit<8){
     $mysqli->query($sql);
 }
 //删除货位
-if ($ca==6&&$limit<8){
+if ($ca==6&&$limit<7){
     $n3=$_GET["n3"];
     $sql="delete from place_b where id='$n3'";
     $mysqli->query($sql);
 }
+
 
 echo "1";

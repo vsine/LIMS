@@ -23,6 +23,9 @@ switch ($limit){
     case 5:
         $name=$name.'库房管理员';
         break;
+    case 5:
+        $name=$name.'超级管理员';
+        break;
 
 
 }
@@ -43,7 +46,7 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     if($_REQUEST['sett']==2){
         $context="info";
     }
-    if($_REQUEST['sett']==3&&$limit<6){
+    if($_REQUEST['sett']==3&&$limit<5){
         $context=place_a();
     }
     if($_REQUEST['sett']==4&&$limit<7){
