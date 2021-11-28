@@ -1,6 +1,6 @@
 <?php
 require "check.php";
 $limit=checkUser();
-if ($limit==5){
+if ($limit<9){
     header("Location:admin.php");
 }

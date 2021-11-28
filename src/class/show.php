@@ -5,7 +5,7 @@ function class_show(): string
 
     $html=<<<EOR
 <!--模态框-->
-  <!-- Modal -->
+  <!-- 编辑按钮模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -26,7 +26,7 @@ function class_show(): string
     </div>
   </div>
 </div>
-
+  <!-- 添加按钮模态框 -->
 <div class="modal fade" id="addplace" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -52,7 +52,7 @@ function class_show(): string
 
 <br>
 <div class="panel panel-primary">
-  <div class="panel-heading">仓库管理</div>
+  <div class="panel-heading">班级管理</div>
   <div class="panel-body">
    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addplace">添加</button>
     <div class="table-responsive">

@@ -7,7 +7,7 @@ require "./src/libary/libary.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
 $limit=checkUser();
-if ($limit!=5){
+if ($limit<9){
     header("Location:route.php");
 }
 $context="he";
@@ -23,7 +23,7 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
         $context='cpadmin()';
     }
     if($_REQUEST['sett']==2){
-        $context='home()';
+        $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能维护中...</div>';
     }
     if($_REQUEST['sett']==3){
         $context=place_a();
