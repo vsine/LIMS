@@ -38,7 +38,7 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     $array[$_REQUEST['sett']]='class="active"';
 
     if($_REQUEST['sett']==0){
-        $context=libary();
+        $context=libary($limit);
     }
     if($_REQUEST['sett']==1){
         $context="info";
@@ -55,7 +55,7 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     if($_REQUEST['sett']==5&&$limit<6){
         $context=class_show();
     }
-    if($_REQUEST['sett']==6){
+    if($_REQUEST['sett']==6&&$limit<4){
         $context='info';
     }
     if($_REQUEST['sett']==7){
@@ -191,7 +191,7 @@ $html=<<<EOT
 
 <footer class="navbar-fixed-bottom text-center">
   <div class="container">
-    <p class="text-muted"><p class="text-muted">&copy; Copyright (c) 2021 电子信息学院实训管理系统-调试站点.  @Author:毛小文</p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./img/gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
+    <p class="text-muted"><p class="text-muted">&copy; Copyright (c) 2021 电子信息学院实训管理系统-调试站点.</p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./img/gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
     <a style="text-align:center" href="http://beian.miit.gov.cn/" class="theme-link" rel="noopener" target="_blank">粤ICP备19125824号</a> </p>
   </div>
 </footer>
