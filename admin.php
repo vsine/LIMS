@@ -188,7 +188,7 @@ $html=<<<EOT
 
 <footer class="navbar-fixed-bottom text-center">
   <div class="container">
-    <p class="text-muted"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
+    <p class="text-muted"><p class="text-muted">&copy; Copyright (c) 2021 电子信息学院实训管理系统-调试站点.  @Author:毛小文</p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./img/gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
     <a style="text-align:center" href="http://beian.miit.gov.cn/" class="theme-link" rel="noopener" target="_blank">粤ICP备19125824号</a> </p>
   </div>
 </footer>
