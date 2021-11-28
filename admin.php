@@ -23,7 +23,7 @@ switch ($limit){
     case 5:
         $name=$name.'库房管理员';
         break;
-    case 5:
+    case 4:
         $name=$name.'超级管理员';
         break;
 

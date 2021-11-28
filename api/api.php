@@ -56,6 +56,27 @@ if ($ca==6&&$limit<7){
     $sql="delete from place_b where id='$n3'";
     $mysqli->query($sql);
 }
-
+//添加班级
+if ($ca==7&&$limit<6){
+    $n3=$_GET["n3"];//编号
+    $n4=$_GET["n4"];//专业
+    $n5=$_GET["n5"];//班级
+    $sql="insert into class values ('$n3','$n4','$n5')";
+    $mysqli->query($sql);
+}
+//更新班级
+if ($ca==8&&$limit<6){
+    $n3=$_GET["n3"];
+    $n4=$_GET["n4"];
+    $n5=$_GET["n5"];
+    $sql="update class set prf='$n4', name='$n5' where id='$n3'";
+    $mysqli->query($sql);
+}
+//删除班级
+if ($ca==6&&$limit<7){
+    $n3=$_GET["n3"];
+    $sql="delete from place_b where id='$n3'";
+    $mysqli->query($sql);
+}
 
 echo "1";
