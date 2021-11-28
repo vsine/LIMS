@@ -133,13 +133,13 @@ $html=<<<EOT
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?sett=0"  >物品库存</a></li>
-            <li><a href="?sett=1"  >出库单</a></li>
-            <li><a href="?sett=2"  >入库单</a></li>
-            <li><a href="?sett=3"  >地点管理</a></li>
-            <li><a href="?sett=4"  >分类管理</a></li>
-            <li><a href="?sett=5"  >账号管理</a></li>
-            <li><a href="?sett=6"  >超级管理员密码修改</a></li>
+            <li><a href="?sett=0">物品库存</a></li>
+            <li><a href="?sett=1">出库单</a></li>
+            <li><a href="?sett=2">入库单</a></li>
+            <li><a href="?sett=3">地点管理</a></li>
+            <li><a href="?sett=4">分类管理</a></li>
+            <li><a href="?sett=5">账号管理</a></li>
+            <li><a href="?sett=6">超级管理员密码修改</a></li>
             <li><a href="" data-toggle="modal" data-target="#myModal">登出</a></li>
           </ul>
          
