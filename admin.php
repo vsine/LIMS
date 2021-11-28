@@ -10,6 +10,18 @@ $limit=checkUser();
 if (!($limit<8)){
     header("Location:route.php");
 }
+
+
+$name= getUserName();
+switch ($limit){
+    case 7:
+        $name.'老师';
+        break;
+    case 6:
+        $name.'协管员';
+}
+
+
 $context="he";
 $array=array('','','','','','','','');
 if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
@@ -111,7 +123,7 @@ $html=<<<EOT
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">您好，管理员</a>
+          <a class="navbar-brand" href="#">您好，$name</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">

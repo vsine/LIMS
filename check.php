@@ -55,33 +55,16 @@ function getUserName(){
         $user=str_replace(' ','+',$user);
         $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
 
-        $sql="select password from users where username='$deuser'";
+        $sql="select name from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
-        if($redata->num_rows<1)
-        {   setcookie("username","");
-            setcookie("password","");
-            header("Location:index.php");
-            exit();
-        }
-        if ($row[0]==$depasw)
+        if($redata->num_rows>0)
         {
-            $sql="select limits from users where username='$deuser'";
-            $redata=$mysqli->query($sql);
-            $row=$redata->fetch_array();
             return $row[0];
-        }else{
-            setcookie("username","");
-            setcookie("password","");
-            header("Location:index.php");
-            exit();
         }
-    }else{
-        setcookie("username","");
-        setcookie("password","");
-        header("Location:index.php");
-        exit("未登录");
+
     }
+    return "404";
 }
 
 
