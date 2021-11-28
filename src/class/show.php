@@ -2,6 +2,14 @@
 function class_show(): string
 {
     $tr='';
+    $sql="select * from place_a";
+    $db_host=$GLOBALS['sqlHost']; //连接的服务器地址
+    $db_user=$GLOBALS['sqlUser']; //连接数据库的用户名
+    $db_psw=$GLOBALS['sqlPass']; //连接数据库的密码
+    $db_name=$GLOBALS['sqlDatabase']; //连接的数据库名称
+    $mysqli=new mysqli($db_host,$db_user,$db_psw,$db_name);
+    $res=  $mysqli->query($sql);
+
 
     $html=<<<EOR
 <!--模态框-->
