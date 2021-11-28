@@ -1,7 +1,7 @@
 <?php
 function class_show(): string
 {
-
+    $tr='';
 
     $html=<<<EOR
 <!--模态框-->
