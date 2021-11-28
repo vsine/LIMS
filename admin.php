@@ -19,6 +19,11 @@ switch ($limit){
         break;
     case 6:
         $name.'协管员';
+        break;
+    case 5:
+        $name.'库房管理员';
+        break;
+
 }
 
 
@@ -127,7 +132,7 @@ $html=<<<EOT
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?sett=0"  >仓库库存</a></li>
+            <li><a href="?sett=0"  >库房库存</a></li>
             <li><a href="?sett=1"  >出库单</a></li>
             <li><a href="?sett=2"  >入库单</a></li>
             <li><a href="?sett=3"  >地点管理</a></li>
@@ -145,7 +150,7 @@ $html=<<<EOT
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li $array[0] ><a href="?sett=0">仓库库存<span class="sr-only">(current)</span></a></li>
+            <li $array[0] ><a href="?sett=0">库房库存<span class="sr-only">(current)</span></a></li>
             <li $array[1]><a href="?sett=1">出库单</a></li>
             <li $array[2]><a href="?sett=2">入库单</a></li>
             <li $array[3]><a href="?sett=3">仓库管理</a></li>
@@ -179,6 +184,9 @@ $html=<<<EOT
 </script>
 
   </body>
+  <footer>
+  
+</footer>
 </html>
 EOT;
 
