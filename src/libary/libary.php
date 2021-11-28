@@ -87,7 +87,7 @@ function libary(){
 <div class="panel panel-success">
   <div class="panel-heading">仓库库存管理</div>
   <div class="panel-body">
-   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addplace">添加</button>
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addplace">入库</button>
     <div class="table-responsive">
             <table class="table table-striped">
               <thead>

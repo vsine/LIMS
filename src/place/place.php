@@ -2,7 +2,6 @@
 function place_a(){
 
         $sql="select * from place_a";
-
         $db_host=$GLOBALS['sqlHost']; //连接的服务器地址
         $db_user=$GLOBALS['sqlUser']; //连接数据库的用户名
         $db_psw=$GLOBALS['sqlPass']; //连接数据库的密码

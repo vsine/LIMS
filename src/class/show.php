@@ -59,8 +59,8 @@ function class_show(): string
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>仓库编号</th>
-                  <th>仓库名称</th>
+                  <th>班级编号</th>
+                  <th>班级名称</th>
                   <th>操作</th>                                                         
                 </tr>
               </thead>

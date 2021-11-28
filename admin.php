@@ -7,7 +7,7 @@ require "./src/libary/libary.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
 $limit=checkUser();
-if (!($limit<9)){
+if (!($limit<8)){
     header("Location:route.php");
 }
 $context="he";
@@ -20,10 +20,10 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
         $context=libary();
     }
     if($_REQUEST['sett']==1){
-        $context='cpadmin()';
+        $context="info";
     }
     if($_REQUEST['sett']==2){
-        $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能维护中...</div>';
+        $context="info";
     }
     if($_REQUEST['sett']==3){
         $context=place_a();
@@ -39,6 +39,11 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     }
     if($_REQUEST['sett']==7){
         $context=setPasw();
+    }
+    if($context=='he'){
+        $context='<div class="alert alert-danger" role="alert"><strong>注意!   </strong>当前账号无权访问...</div>';
+    }elseif ($context=='info'){
+        $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能暂未开放...</div>';
     }
 }else{
     $array[0]='class="active"';
@@ -110,9 +115,9 @@ $html=<<<EOT
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?sett=0"  >库存管理</a></li>
-            <li><a href="?sett=1"  >耗品单</a></li>
-            <li><a href="?sett=2"  >借还单</a></li>
+            <li><a href="?sett=0"  >仓库库存</a></li>
+            <li><a href="?sett=1"  >出库单</a></li>
+            <li><a href="?sett=2"  >入库单</a></li>
             <li><a href="?sett=3"  >地点管理</a></li>
             <li><a href="?sett=4"  >分类管理</a></li>
             <li><a href="?sett=5"  >账号管理</a></li>
@@ -128,9 +133,9 @@ $html=<<<EOT
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li $array[0] ><a href="?sett=0">库存管理<span class="sr-only">(current)</span></a></li>
-            <li $array[1]><a href="?sett=1">耗品单</a></li>
-            <li $array[2]><a href="?sett=2">借还单</a></li>
+            <li $array[0] ><a href="?sett=0">仓库库存<span class="sr-only">(current)</span></a></li>
+            <li $array[1]><a href="?sett=1">出库单</a></li>
+            <li $array[2]><a href="?sett=2">入库单</a></li>
             <li $array[3]><a href="?sett=3">仓库管理</a></li>
             <li $array[4]><a href="?sett=4">货位管理</a></li>
             <li $array[5]><a href="?sett=5">班级管理</a></li>
