@@ -14,14 +14,14 @@ if (!($limit<8)){
 
 $name= getUserName();
 switch ($limit){
-    case 7:
-        $name.'老师';
+    case '7':
+        $name=$name.'老师';
         break;
     case 6:
-        $name.'协管员';
+        $name=$name.'协管员';
         break;
     case 5:
-        $name.'库房管理员';
+        $name=$name.'库房管理员';
         break;
 
 
@@ -133,7 +133,7 @@ $html=<<<EOT
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?sett=0"  >库房库存</a></li>
+            <li><a href="?sett=0"  >物品库存</a></li>
             <li><a href="?sett=1"  >出库单</a></li>
             <li><a href="?sett=2"  >入库单</a></li>
             <li><a href="?sett=3"  >地点管理</a></li>
@@ -151,7 +151,7 @@ $html=<<<EOT
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li $array[0] ><a href="?sett=0">库房库存<span class="sr-only">(current)</span></a></li>
+            <li $array[0] ><a href="?sett=0">物品库存<span class="sr-only">(current)</span></a></li>
             <li $array[1]><a href="?sett=1">出库单</a></li>
             <li $array[2]><a href="?sett=2">入库单</a></li>
             <li $array[3]><a href="?sett=3">仓库管理</a></li>
@@ -184,10 +184,16 @@ $html=<<<EOT
      }  
 </script>
 
-  </body>
-  <footer>
-  
+
+
+<footer class="navbar-fixed-bottom text-center">
+  <div class="container">
+    <p class="text-muted"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
+    <a style="text-align:center" href="http://beian.miit.gov.cn/" class="theme-link" rel="noopener" target="_blank">粤ICP备19125824号</a> </p>
+  </div>
 </footer>
+  </body>
+
 </html>
 EOT;
 
