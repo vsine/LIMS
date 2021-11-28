@@ -10,7 +10,6 @@ $limit=checkUser();
 if ($limit!=5){
     header("Location:route.php");
 }
-
 $context="he";
 $array=array('','','','','','','','');
 if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
