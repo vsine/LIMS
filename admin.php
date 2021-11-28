@@ -7,7 +7,7 @@ require "./src/libary/libary.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
 $limit=checkUser();
-if ($limit<9){
+if (!($limit<9)){
     header("Location:route.php");
 }
 $context="he";
