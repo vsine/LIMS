@@ -43,13 +43,13 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     if($_REQUEST['sett']==2){
         $context="info";
     }
-    if($_REQUEST['sett']==3){
+    if($_REQUEST['sett']==3&&$limit<6){
         $context=place_a();
     }
-    if($_REQUEST['sett']==4){
+    if($_REQUEST['sett']==4&&$limit<7){
         $context=place_b();
     }
-    if($_REQUEST['sett']==5){
+    if($_REQUEST['sett']==5&&$limit<6){
         $context=class_show();
     }
     if($_REQUEST['sett']==6){
@@ -59,9 +59,9 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
         $context=setPasw();
     }
     if($context=='he'){
-        $context='<div class="alert alert-danger" role="alert"><strong>注意!   </strong>当前账号无权访问...</div>';
+        $context='<div class="alert alert-danger" role="alert"><strong>注意!   </strong>当前账号无权访问该功能。</div>';
     }elseif ($context=='info'){
-        $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能暂未开放...</div>';
+        $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能暂未开放。</div>';
     }
 }else{
     $array[0]='class="active"';
