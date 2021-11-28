@@ -56,10 +56,10 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
         $context=class_show();
     }
     if($_REQUEST['sett']==6){
-        $context=setPasw();
+        $context='info';
     }
     if($_REQUEST['sett']==7){
-        $context=setPasw();
+        $context='info';
     }
     if($context=='he'){
         $context='<div class="alert alert-danger" role="alert"><strong>注意!   </strong>当前账号无权访问该功能。</div>';

@@ -73,9 +73,9 @@ if ($ca==8&&$limit<6){
     $mysqli->query($sql);
 }
 //删除班级
-if ($ca==6&&$limit<7){
+if ($ca==9&&$limit<7){
     $n3=$_GET["n3"];
-    $sql="delete from place_b where id='$n3'";
+    $sql="delete from class where id='$n3'";
     $mysqli->query($sql);
 }
 

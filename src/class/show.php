@@ -170,7 +170,7 @@ function class_show(): string
         let pasw=getCookie("password");
         let name=document.getElementById("iName");
         let name1=document.getElementById("iName1");
-        let name2=document.getElementById("iName1");
+        let name2=document.getElementById("iName2");
         let onc=document.getElementById('edit');
         let onc1=document.getElementById('remove');
         onc.className+=' disabled';
