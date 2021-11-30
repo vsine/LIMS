@@ -6,7 +6,6 @@ $db_pass=$GLOBALS['sqlPass'];
 $db_host=$GLOBALS['sqlHost'];
 $db_database=$GLOBALS['sqlDatabase'];
 $mysql=new mysqli($db_host,$db_user,$db_pass,$db_database);
-
 $html= <<<EOT
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns="http://www.w3.org/1999/html">

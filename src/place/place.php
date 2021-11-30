@@ -200,16 +200,16 @@ function place_b(){
                     $k=false;
                     if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1)
                         $bt="未选择";
-                    }
-                    if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
-                    }else{
+                }
+                if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
+                }else{
                         $tr=$tr."<tr>";
                         $tr=$tr."<td>".$row[0]."</td>";
                         $tr=$tr."<td>".$row[1]."</td>";
                         $tr=$tr."<td>".$ck."</td>";
                         $tr=$tr."<td>".'<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editcp" onclick="'."OnClickEdit('$row[0]','$row[1]','$iss')".'">编辑</button>'."</td>";
                         $tr=$tr." </tr>";
-                    }
+                }
             }
     $li="";
     $sql="select * from place_a";
@@ -222,6 +222,7 @@ function place_b(){
                $server=$server.'&fl='.$row[0];
                $li=$li."<li><a href='$server'>$row[1]</a></li>";
             }
+
     $html=<<<EOR
   <!-- Modal -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

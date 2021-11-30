@@ -17,14 +17,13 @@ function checkUser(){
         $sql="select password from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
-        if($redata->num_rows<1)
-        {   setcookie("username","");
+        if($redata->num_rows<1) {
+            setcookie("username","");
             setcookie("password","");
             header("Location:index.php");
             exit();
         }
-        if ($row[0]==$depasw)
-        {
+        if ($row[0]==$depasw) {
             $sql="select limits from users where username='$deuser'";
             $redata=$mysqli->query($sql);
             $row=$redata->fetch_array();

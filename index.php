@@ -15,9 +15,7 @@ $html= <<<EOT
 </head>
 <script>
     
-
 </script>
-
 
 <link href="./css/login1.css" rel="stylesheet">
 <link href="./css/custom.css" rel="stylesheet">
