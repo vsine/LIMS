@@ -115,8 +115,8 @@ function class_show(): string
               <thead>
                 <tr>
                   <th>班级编号</th>
-                  <th>班级名称</th>
                   <th>所属专业</th>
+                  <th>班级名称</th>
                   <th>操作</th>                                                         
                 </tr>
               </thead>

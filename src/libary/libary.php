@@ -1,7 +1,7 @@
 <?php
 function libary($limit){
 
-    $sql="select * from project where state<3";
+    $sql="select * from depot1";
     $db_host=$GLOBALS['sqlHost']; //连接的服务器地址
     $db_user=$GLOBALS['sqlUser']; //连接数据库的用户名
     $db_psw=$GLOBALS['sqlPass']; //连接数据库的密码
@@ -13,25 +13,7 @@ function libary($limit){
 
         if($res->num_rows>0){
             while ($row=$res->fetch_array()){
-                $tr=$tr."<tr>";
-                $tr=$tr."<td>".$row[1]."</td>";
 
-                if ($row[2]==0){
-                    $tr=$tr."<td>地点编号</td>";
-                }else{
-                    $tr=$tr."<td>地点</td>";
-                }
-                $tr=$tr."<td>".$row[5]."</td>";
-                $tr=$tr."<td>".$row[4]."</td>";
-                $tr=$tr."<td>".$row[3]."</td>";
-                if($row[6]==0){
-                    $tr=$tr."<td>报名中</td>";
-                }else if ($row[6]==1){
-                    $tr=$tr."<td>准备中</td>";
-                }else if($row[6]==2){
-                    $tr=$tr."<td>进行中</td>";
-                }
-                $tr=$tr." </tr>";
             }
 
         }

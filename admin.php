@@ -68,7 +68,7 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     }
 }else{
     $array[0]='class="active"';
-    $context=libary();
+    $context=libary($limit);
 }
 $html=<<<EOT
 
