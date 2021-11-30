@@ -1,7 +1,6 @@
 <?php
 
     $html=<<<EOT
-
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>

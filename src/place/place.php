@@ -94,26 +94,21 @@ function place_a(){
 </div>
 <script>
     function OnClickAdd(){
-
-    let user=getCookie("username");
-    let pasw=getCookie("password");
-    let name=document.getElementById("inputName");
-    let name1=document.getElementById("inputName1");
-    
-    let onc=document.getElementById('ddc');
-    onc.className+=' disabled';
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', './api/api.php?ca=1&n1='+user+'&n2='+pasw+'&n3='+name.value+'&n4='+name1.value, false);
-    xhr.send();
-    if(xhr.status===200){
-        location.reload();
-    }else {
-        location.reload();
+        let user=getCookie("username");
+        let pasw=getCookie("password");
+        let name=document.getElementById("inputName");
+        let name1=document.getElementById("inputName1");
+        let onc=document.getElementById('ddc');
+        onc.className+=' disabled';
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', './api/api.php?ca=1&n1='+user+'&n2='+pasw+'&n3='+name.value+'&n4='+name1.value, false);
+        xhr.send();
+        if(xhr.status===200){
+            location.reload();
+        }else {
+            location.reload();
+        }
     }
-
-    
-    }
-    
     function OnClickEdit(id,value){
         let name=document.getElementById("iname");
         let name1=document.getElementById("iuser");
@@ -135,7 +130,6 @@ function place_a(){
         }else {
             location.reload();
         }
-        
     }
     function OnClickRemove(){
         let user=getCookie("username");
@@ -159,10 +153,6 @@ function place_a(){
         if(arr != null) return unescape(arr[2]); 
         return false;
     }
-
-
-
-
 </script>
 EOR;
         return $html;
@@ -199,18 +189,17 @@ function place_b(){
                 $k=true;
                 $iss=$row[2];
                 $ck="";
-                    $sql1="select place from place_a where id='$row[2]'";
-                    $res1=  $mysqli->query($sql1);
-                    if($res1->num_rows>0){
-                        $row1=$res1->fetch_array();
-                        $ck=$row1[0];
-                    }
-                    else{
-                        $ck="未选择";
-                        $iss="-1";
-                        if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1)
-                            $bt="未选择";
-                        $k=false;
+                $sql1="select place from place_a where id='$row[2]'";
+                $res1=  $mysqli->query($sql1);
+                if($res1->num_rows>0){
+                    $row1=$res1->fetch_array();
+                    $ck=$row1[0];
+                } else{
+                    $ck="未选择";
+                    $iss="-1";
+                    $k=false;
+                    if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1)
+                        $bt="未选择";
                     }
                     if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
                     }else{
@@ -224,7 +213,7 @@ function place_b(){
             }
     $li="";
     $sql="select * from place_a";
-    $res=  $mysqli->query($sql);
+    $res=$mysqli->query($sql);
     if($res)
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
