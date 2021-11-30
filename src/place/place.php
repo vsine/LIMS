@@ -173,19 +173,14 @@ EOR;
 function place_b(){
     $bt="全部";
     $sql="select * from place_b order by aid";
-
     $db_host=$GLOBALS['sqlHost']; //连接的服务器地址
     $db_user=$GLOBALS['sqlUser']; //连接数据库的用户名
     $db_psw=$GLOBALS['sqlPass']; //连接数据库的密码
     $db_name=$GLOBALS['sqlDatabase']; //连接的数据库名称
     $mysqli=new mysqli($db_host,$db_user,$db_psw,$db_name);
-
-
-
     if(isset($_REQUEST['fl'])){
         $gid=$_REQUEST['fl'];
         if ($gid==-1){
-
         }else{
             $sql="select * from place_b where aid='$gid'";
             $rsql="select place from place_a where id='$gid'";
@@ -193,10 +188,7 @@ function place_b(){
             $row=$res->fetch_array();
             $bt=$row[0];
         }
-
     }
-
-
     $res=  $mysqli->query($sql);
     $tr="";
     $tr1="";
@@ -204,7 +196,6 @@ function place_b(){
     if ($res)
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
-
                 $k=true;
                 $iss=$row[2];
                 $ck="";
@@ -212,20 +203,16 @@ function place_b(){
                     $res1=  $mysqli->query($sql1);
                     if($res1->num_rows>0){
                         $row1=$res1->fetch_array();
-                        //$tr=$tr."<td>".$row1[0]."</td>";
                         $ck=$row1[0];
                     }
                     else{
-                        //$tr=$tr."<td>"."未选择"."</td>";
                         $ck="未选择";
                         $iss="-1";
                         if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1)
                             $bt="未选择";
                         $k=false;
                     }
-
                     if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
-
                     }else{
                         $tr=$tr."<tr>";
                         $tr=$tr."<td>".$row[0]."</td>";
@@ -234,30 +221,19 @@ function place_b(){
                         $tr=$tr."<td>".'<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editcp" onclick="'."OnClickEdit('$row[0]','$row[1]','$iss')".'">编辑</button>'."</td>";
                         $tr=$tr." </tr>";
                     }
-
             }
-
-
-
     $li="";
-
     $sql="select * from place_a";
     $res=  $mysqli->query($sql);
     if($res)
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
-
                $tr1=$tr1."<option value='$row[0]'>$row[1]</option>";
                $server= $_SERVER['PHP_SELF']."?".'&sett='.$_REQUEST['sett'];
                $server=$server.'&fl='.$row[0];
                $li=$li."<li><a href='$server'>$row[1]</a></li>";
             }
-
-
-
-
     $html=<<<EOR
-<!--模态框-->
   <!-- Modal -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
