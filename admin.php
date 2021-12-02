@@ -70,6 +70,13 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     $array[0]='class="active"';
     $context=libary($limit);
 }
+
+
+
+
+
+
+
 $html=<<<EOT
 
 <!DOCTYPE html>
