@@ -15,6 +15,7 @@ function libary($limit){
                 $tr=$tr."<tr>";
                 $tr=$tr."<td>".$row[0]."</td>";
                 $tr=$tr."<td>".$row[3]."</td>";
+                $tr=$tr."<td>".$row[4]."</td>";
                 $tr=$tr."</tr>";
             }
 
