@@ -9,9 +9,8 @@ function place_a(){
         $mysqli=new mysqli($db_host,$db_user,$db_psw,$db_name);
         $res=  $mysqli->query($sql);
         $tr="";
-        if ($res){
-
-            if($res->num_rows>0){
+        if ($res)
+            if($res->num_rows>0)
                 while ($row=$res->fetch_array()){
                     $tr=$tr."<tr>";
                     $tr=$tr."<td>".$row[0]."</td>";
@@ -20,9 +19,9 @@ function place_a(){
                     $tr=$tr." </tr>";
                 }
 
-            }
 
-        }
+
+
 
         $html=<<<EOR
 <!--模态框-->
