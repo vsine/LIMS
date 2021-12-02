@@ -13,6 +13,8 @@ function libary($limit){
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
                 $tr=$tr."<tr>";
+                $tr=$tr."<td>".$row[0]."</td>";
+                $tr=$tr."<td>".$row[3]."</td>";
                 $tr=$tr."</tr>";
             }
 
@@ -111,10 +113,6 @@ function libary($limit){
         if(arr != null) return unescape(arr[2]); 
         return false;
     }
-
-
-
-
 </script>
 EOR;
     return $html;
