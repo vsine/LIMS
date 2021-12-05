@@ -12,6 +12,3 @@ header("Location:login.php");
 echo $res."ds";
 
 
-
-
-
