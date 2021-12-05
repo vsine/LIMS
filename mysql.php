@@ -10,3 +10,4 @@ setcookie("username","");
 setcookie("password","");
 header("Location:login.php");
 echo $res."ds";
+
