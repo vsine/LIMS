@@ -1,7 +1,6 @@
 # IMS是什么?
 
 一个基于Web的信息管理系统
-
 ## IMS有哪些特色？
 * UI设计
     *  基于Material Design Style的质感设计

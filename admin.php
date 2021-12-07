@@ -12,6 +12,8 @@ if (!($limit<8)){
 }
 
 
+
+
 $name= getUserName();
 switch ($limit){
     case '7':
