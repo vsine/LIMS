@@ -11,13 +11,6 @@ $GLOBALS['sqlPass']='pBpMrhaM6bENPJJ5';
 $GLOBALS['sqlDatabase']='ims_kernel';
 $GLOBALS['sqlHost']='api.qvqol.com';
 
-
-
-
-
-
-
-
 //Key configuration
 $GLOBALS['publickey']= <<<KEY
 -----BEGIN PUBLIC KEY-----
