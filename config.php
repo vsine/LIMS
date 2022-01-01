@@ -9,7 +9,7 @@
 $GLOBALS['sqlUser']='root';
 $GLOBALS['sqlPass']='asd125737';
 $GLOBALS['sqlDatabase']='ims_kernel';
-$GLOBALS['sqlHost']='192.168.31.174';
+$GLOBALS['sqlHost']='192.168.31.171';
 //Key configuration
 $GLOBALS['publickey']= <<<KEY
 -----BEGIN PUBLIC KEY-----
