@@ -7,7 +7,7 @@
 
 //Database configuration
 $GLOBALS['sqlUser']='ims_kernel';
-$GLOBALS['sqlPass']='http://localhost:63342/LIMS/admin.php?_ijt=ociirlgfuhissef2crsqnn589r';
+$GLOBALS['sqlPass']='pBpMrhaM6bENPJJ5';
 $GLOBALS['sqlDatabase']='ims_kernel';
 $GLOBALS['sqlHost']='api.qvqol.com';
 //Key configuration
