@@ -27,11 +27,13 @@ $navbar="";
 $sidebar="";
 $sel=$arr['list'][0][1];
  foreach ($arr['list'] as $key=>$value){
+     $sidebar=$sidebar.'<ul class="nav nav-sidebar">';
      foreach ($value as $key=>$value)
      {
          if($key>0)
          $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
      }
+     $sidebar=$sidebar.'</ul>';
  }
 $context="he";
 
