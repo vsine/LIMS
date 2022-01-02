@@ -32,6 +32,7 @@ $sel=$arr['list'][0][1];
      {
          if($key>0)
          $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
+         $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value]</a></li>";
      }
      $sidebar=$sidebar.'</ul>';
  }
