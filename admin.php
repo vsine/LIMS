@@ -31,7 +31,6 @@ $sel=$arr['list'][0][1];
      {
          if($key>0)
          $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
-
      }
  }
 $context="he";
