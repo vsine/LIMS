@@ -30,9 +30,11 @@ $sel=$arr['list'][0][1];
      $sidebar=$sidebar.'<ul class="nav nav-sidebar">';
      foreach ($value as $key=>$value)
      {
-         if($key>0)
-         $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
-         $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value]</a></li>";
+         if($key>0){
+             $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
+             $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value]</a></li>";
+         }
+
      }
      $sidebar=$sidebar.'</ul>';
  }
@@ -162,22 +164,7 @@ $html=<<<EOT
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li $array[0] ><a href="?sett=0">物品库存<span class="sr-only">(current)</span></a></li>
-            <li $array[1]><a href="?sett=1">出库单</a></li>
-            <li $array[2]><a href="?sett=2">入库单</a></li>
-            <li $array[3]><a href="?sett=3">仓库管理</a></li>
-            <li $array[4]><a href="?sett=4">货位管理</a></li>
-            <li $array[5]><a href="?sett=5">班级管理</a></li>
-            
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li $array[6]><a href="?sett=6">账号管理</a></li>
-            <li $array[7]><a href="?sett=7">管理员密码修改</a></li>
-            
-      
-          </ul>
-         
+           $sidebar
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
            $context
