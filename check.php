@@ -67,6 +67,33 @@ function getUserName(){
 }
 
 
+function getUserMarks(){
+
+    $db_user=$GLOBALS['sqlUser'];
+    $db_pass=$GLOBALS['sqlPass'];
+    $db_host=$GLOBALS['sqlHost'];
+    $db_database=$GLOBALS['sqlDatabase'];
+    $mysqli=new mysqli($db_host,$db_user,$db_pass,$db_database);
+    if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
+        $user=$_COOKIE["username"];
+        $pasw=$_COOKIE["password"];
+        $user=str_replace(' ','+',$user);
+        $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
+
+        $sql="select marks from users where username='$deuser'";
+        $redata=$mysqli->query($sql);
+        $row=$redata->fetch_array();
+        if($redata->num_rows>0)
+        {
+            return json_decode($row[0],true); ;
+        }
+
+    }
+    return "404";
+
+}
+
+
 function checkUserFromString($user,$pasw){
     $db_user=$GLOBALS['sqlUser'];
     $db_pass=$GLOBALS['sqlPass'];

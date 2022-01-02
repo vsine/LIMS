@@ -1,11 +1,15 @@
 <?php
-
+require_once "config.php";
 require "check.php";
 require "./src/place/place.php";
 require "./src/libary/libary.php";
 //require "home.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
+
+
+$mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'ggggg');
+
 $limit=checkUser();
 if (!($limit<8)){
     header("Location:route.php");
@@ -15,37 +19,37 @@ if (!($limit<8)){
 
 
 $name= getUserName();
-switch ($limit){
-    case '7':
-        $name=$name.'老师';
-        break;
-    case 6:
-        $name=$name.'协管员';
-        break;
-    case 5:
-        $name=$name.'库房管理员';
-        break;
-    case 4:
-        $name=$name.'超级管理员';
-        break;
+$arr = getUserMarks();
 
+$name=$name.$arr['title'];
 
-}
+$navbar="";
+$sidebar="";
+$sel=$arr['list'][0][1];
+ foreach ($arr['list'] as $key=>$value){
+     foreach ($value as $key=>$value)
+     {
+         if($key>0)
+         $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
 
-
+     }
+ }
 $context="he";
-$array=array('','','','','','','','');
-if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
 
-    $array[$_REQUEST['sett']]='class="active"';
+if (isset($_REQUEST['sett'])&&array_key_exists($_REQUEST['sett'],$mlist)){
 
+   # $array[]='class="active"';
+    $sel=$_REQUEST['sett'];
     if($_REQUEST['sett']==0){
+        //仓库
         $context=libary($limit);
     }
     if($_REQUEST['sett']==1){
+        //出库
         $context="info";
     }
     if($_REQUEST['sett']==2){
+        //入库
         $context="info";
     }
     if($_REQUEST['sett']==3&&$limit<5){
@@ -68,8 +72,8 @@ if (isset($_REQUEST['sett'])&&$_REQUEST['sett']<8){
     }elseif ($context=='info'){
         $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能暂未开放。</div>';
     }
-}else{
-    $array[0]='class="active"';
+}else {
+
     $context=libary($limit);
 }
 
@@ -145,13 +149,7 @@ $html=<<<EOT
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?sett=0">物品库存</a></li>
-            <li><a href="?sett=1">出库单</a></li>
-            <li><a href="?sett=2">入库单</a></li>
-            <li><a href="?sett=3">地点管理</a></li>
-            <li><a href="?sett=4">分类管理</a></li>
-            <li><a href="?sett=5">账号管理</a></li>
-            <li><a href="?sett=6">超级管理员密码修改</a></li>
+                $navbar
             <li><a href="" data-toggle="modal" data-target="#myModal">登出</a></li>
           </ul>
          
