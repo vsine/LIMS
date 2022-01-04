@@ -94,6 +94,17 @@ function getUserMarks(){
 }
 
 
+function set_key_exists($sett,$arr){
+     $res =false;
+     foreach ($arr['list'] as $key=>$value)
+     {
+           $res=in_array($sett,$value);
+           if($res)
+               break;
+     }
+     return $res;
+}
+
 function checkUserFromString($user,$pasw){
     $db_user=$GLOBALS['sqlUser'];
     $db_pass=$GLOBALS['sqlPass'];

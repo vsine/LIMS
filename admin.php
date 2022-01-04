@@ -8,7 +8,7 @@ require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
 
 
-$mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'ggggg');
+$mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'test',8=>'test');
 
 $limit=checkUser();
 if (!($limit<8)){
@@ -27,12 +27,16 @@ $navbar="";
 $sidebar="";
 $sel=$arr['list'][0][1];
  foreach ($arr['list'] as $key=>$value){
+     $sidebar=$sidebar."<p class='bg-info'>$value[0] </p>";
      $sidebar=$sidebar.'<ul class="nav nav-sidebar">';
      foreach ($value as $key=>$value)
      {
          if($key>0){
              $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
-             $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value]</a></li>";
+             if ($value==1)
+                 $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value] <span class='badge badge-info' style='background-color: #d9534f'>2</span></a>  </li>";
+             else
+                 $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value] </a>  </li>";
          }
 
      }
@@ -40,7 +44,7 @@ $sel=$arr['list'][0][1];
  }
 $context="he";
 
-if (isset($_REQUEST['sett'])&&array_key_exists($_REQUEST['sett'],$mlist)){
+if (isset($_REQUEST['sett'])&&set_key_exists($_REQUEST['sett'],$arr)){
 
    # $array[]='class="active"';
     $sel=$_REQUEST['sett'];
@@ -56,25 +60,25 @@ if (isset($_REQUEST['sett'])&&array_key_exists($_REQUEST['sett'],$mlist)){
         //入库
         $context="info";
     }
-    if($_REQUEST['sett']==3&&$limit<5){
+    if($_REQUEST['sett']==3){
         $context=place_a();
     }
-    if($_REQUEST['sett']==4&&$limit<7){
+    if($_REQUEST['sett']==4){
         $context=place_b();
     }
-    if($_REQUEST['sett']==5&&$limit<6){
+    if($_REQUEST['sett']==5){
         $context=class_show();
     }
-    if($_REQUEST['sett']==6&&$limit<4){
+    if($_REQUEST['sett']==6){
         $context='info';
     }
     if($_REQUEST['sett']==7){
         $context='info';
     }
     if($context=='he'){
-        $context='<div class="alert alert-danger" role="alert"><strong>注意!   </strong>当前账号无权访问该功能。</div>';
+        $context='<div class="alert alert-danger" role="alert"><strong>注意!   </strong>非法访问。</div>';
     }elseif ($context=='info'){
-        $context='<div class="alert alert-info" role="alert"><strong>注意!   </strong>此功能暂未开放。</div>';
+        $context='<div class="alert alert-warning" role="alert"><strong>注意!   </strong>此功能暂未开放。</div>';
     }
 }else {
 
@@ -98,7 +102,7 @@ $html=<<<EOT
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="./img/favicon.ico">
-    <title>库存管理控制台</title>
+    <title>实训基地管理系统</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="./css/dashboard.css" rel="stylesheet">
