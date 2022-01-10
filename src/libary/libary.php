@@ -2,11 +2,7 @@
 function libary($limit){
 
     $sql="select * from depot1";
-    $db_host=$GLOBALS['sqlHost'];
-    $db_user=$GLOBALS['sqlUser'];
-    $db_psw=$GLOBALS['sqlPass'];
-    $db_name=$GLOBALS['sqlDatabase'];
-    $mysqli=new mysqli($db_host,$db_user,$db_psw,$db_name);
+    $mysqli=getMysqliObject();
     $res=  $mysqli->query($sql);
     $tr="";
     if ($res)
