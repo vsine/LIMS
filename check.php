@@ -1,12 +1,18 @@
 <?php
 require "config.php";
 require "RsaUtils.php";
-function checkUser(){
+
+function getMysqliObject(){
     $db_user=$GLOBALS['sqlUser'];
     $db_pass=$GLOBALS['sqlPass'];
     $db_host=$GLOBALS['sqlHost'];
     $db_database=$GLOBALS['sqlDatabase'];
     $mysqli=new mysqli($db_host,$db_user,$db_pass,$db_database);
+    $mysqli->set_charset("utf-8");
+    return $mysqli;
+}
+function checkUser(){
+    $mysqli=getMysqliObject();
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=$_COOKIE["username"];
         $pasw=$_COOKIE["password"];
@@ -14,6 +20,8 @@ function checkUser(){
         $pasw=str_replace(' ','+',$pasw);
         $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
         $depasw=RsaUtils::privateDecrypt($pasw,$GLOBALS['privatekey']);
+        $deuser=$mysqli->real_escape_string($deuser);
+        $depasw=$mysqli->real_escape_string($depasw);
         $sql="select password from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
@@ -42,12 +50,10 @@ function checkUser(){
     }
 }
 
+
+
 function getUserName(){
-    $db_user=$GLOBALS['sqlUser'];
-    $db_pass=$GLOBALS['sqlPass'];
-    $db_host=$GLOBALS['sqlHost'];
-    $db_database=$GLOBALS['sqlDatabase'];
-    $mysqli=new mysqli($db_host,$db_user,$db_pass,$db_database);
+    $mysqli=getMysqliObject();
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=$_COOKIE["username"];
         $pasw=$_COOKIE["password"];
@@ -66,12 +72,7 @@ function getUserName(){
 
 
 function getUserMarks(){
-
-    $db_user=$GLOBALS['sqlUser'];
-    $db_pass=$GLOBALS['sqlPass'];
-    $db_host=$GLOBALS['sqlHost'];
-    $db_database=$GLOBALS['sqlDatabase'];
-    $mysqli=new mysqli($db_host,$db_user,$db_pass,$db_database);
+    $mysqli=getMysqliObject();
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=$_COOKIE["username"];
         $pasw=$_COOKIE["password"];

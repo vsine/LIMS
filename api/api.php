@@ -24,7 +24,9 @@ if ($ca==1&&$limit<5){
 if ($ca==2){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
+    echo $n3.'<br>';
     $sql="update place_a set place='$n4' where id='$n3'";
+    echo $sql.'<br>';
     $mysqli->query($sql);
 }
 //删除仓库
