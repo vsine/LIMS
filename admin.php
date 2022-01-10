@@ -18,9 +18,6 @@ if (!($limit<8)){
     header("Location:route.php");
 }
 
-
-
-
 $name= getUserName($mysqli);
 $arr = getUserMarks($mysqli);
 
