@@ -13,7 +13,7 @@ $limit=checkUserFromString($user,$pasw);
 if ($limit==-1)
     exit();
 //添加仓库
-if ($ca==1&&$limit<5){
+if ($ca==1){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n3=$mysqli->real_escape_string($n3);
@@ -27,13 +27,11 @@ if ($ca==2){
     $n4=$_GET["n4"];
     $n3=$mysqli->real_escape_string($n3);
     $n4=$mysqli->real_escape_string($n4);
-    echo $n3.'<br>';
     $sql="update place_a set place='$n4' where id='$n3'";
-    echo $sql.'<br>';
     $mysqli->query($sql);
 }
 //删除仓库
-if ($ca==3&&$limit<6){
+if ($ca==3){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n3=$mysqli->real_escape_string($n3);
@@ -42,7 +40,7 @@ if ($ca==3&&$limit<6){
     $mysqli->query($sql);
 }
 //添加货位
-if ($ca==4&&$limit<7){
+if ($ca==4){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n5=$_GET["n5"];
