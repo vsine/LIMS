@@ -65,7 +65,7 @@ function getUserName( $mysqli){
             return $row[0];
         }
     }
-    return "404";
+    return false;
 }
 
 

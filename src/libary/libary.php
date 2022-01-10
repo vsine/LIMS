@@ -15,9 +15,6 @@ function libary($limit){
                 $tr=$tr."</tr>";
             }
 
-
-
-
     $html=<<<EOR
 <!--模态框-->
   <!-- Modal -->

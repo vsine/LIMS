@@ -1,21 +1,10 @@
 <?php
 function class_show(): string
 {
-
     $sql="select * from class order by prf";
     $mysqli=getMysqliObject();
-
-
-
-
-
-
-
-
-
     $res=  $mysqli->query($sql);
     $tr="";
-
     if ($res)
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
@@ -27,16 +16,6 @@ function class_show(): string
                     $tr=$tr."<td>".'<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editcp" onclick="'."OnClickEdit('$row[0]','$row[1]','$row[2]')".'">编辑</button>'."</td>";
                     $tr=$tr." </tr>";
                 }
-
-
-
-
-
-
-
-
-
-
     $html=<<<EOR
 <!--模态框-->
   <!-- Modal -->

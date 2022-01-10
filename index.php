@@ -54,7 +54,6 @@ $html= <<<EOT
             
                 <h4></h4>
                 <ul>
-                    
                         <li>
                             <a href="combinedLogin.do?type=weixin&success=https://authserver.dgpt.edu.cn/authserver/login?service=https%3A%2F%2Fehall.dgpt.edu.cn%2Fsso%2Flogin%3Fstate%3Dcjfn5yve"
                                style="display: inline-block;">

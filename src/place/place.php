@@ -1,6 +1,5 @@
 <?php
 function place_a(){
-
         $sql="select * from place_a";
         $mysqli=getMysqliObject();
         $res=  $mysqli->query($sql);
@@ -14,11 +13,6 @@ function place_a(){
                     $tr=$tr."<td>".'<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editcp" onclick="'."OnClickEdit('$row[0]','$row[1]')".'">编辑</button>'."</td>";
                     $tr=$tr." </tr>";
                 }
-
-
-
-
-
         $html=<<<EOR
 <!--模态框-->
   <!-- Modal -->

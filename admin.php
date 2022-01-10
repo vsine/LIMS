@@ -6,23 +6,15 @@ require "./src/libary/libary.php";
 //require "home.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
-
-
 $mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'test',8=>'test');
-
 $mysqli=getMysqliObject();
-
-
 $limit=checkUser($mysqli);
-if (!($limit<8)){
-    header("Location:route.php");
-}
-
+//if (!($limit<8)){
+//    header("Location:route.php");
+//}
 $name= getUserName($mysqli);
 $arr = getUserMarks($mysqli);
-
 $name=$name.$arr['title'];
-
 $navbar="";
 $sidebar="";
 $sel=$arr['list'][0][1];
@@ -45,7 +37,6 @@ $sel=$arr['list'][0][1];
 $context="he";
 
 if (isset($_REQUEST['sett'])&&set_key_exists($_REQUEST['sett'],$arr)){
-
    # $array[]='class="active"';
     $sel=$_REQUEST['sett'];
     if($_REQUEST['sett']==0){
@@ -81,7 +72,6 @@ if (isset($_REQUEST['sett'])&&set_key_exists($_REQUEST['sett'],$arr)){
         $context='<div class="alert alert-warning" role="alert"><strong>注意!   </strong>此功能暂未开放。</div>';
     }
 }else {
-
     $context=libary($limit);
 }
 

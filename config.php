@@ -1,10 +1,8 @@
 <?php
-
 /**
  *
  *  This file is a global variable control.
  */
-
 //Database configuration
 $GLOBALS['sqlUser']='ims_kernel';
 $GLOBALS['sqlPass']='pBpMrhaM6bENPJJ5';

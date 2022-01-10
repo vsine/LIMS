@@ -45,7 +45,6 @@
               </tbody>
             </table>
             <script>
-            
             function opens(pid)  {
               window.open('viewPid.php?pid='+pid);
             }
