@@ -174,11 +174,12 @@ $html= <<<EOT
          enuser= urlsafeDecode(enuser);
          var enpasw=enctool.encryptLong(pasw.value);
          enpasw=urlsafeDecode(enpasw);
-         console.log(user.value);
-         console.log(enuser);
+         //console.log(user.value);
+         //console.log(enuser);
+         document.cookie='SameSite=Lax';
          document.cookie="username="+enuser;
          document.cookie="password="+enpasw;
-         document.cookie='SameSite=Lax';
+
      }  
      if(!getCookie("username")==""){window.location.href = 'route.php';}
       function getCookie(name)

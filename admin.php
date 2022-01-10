@@ -180,6 +180,7 @@ $html=<<<EOT
      function OnClick(){
          document.cookie="username=";
          document.cookie="password=";
+         document.cookie='SameSite=Lax';
          location.reload();
      }  
 </script>
