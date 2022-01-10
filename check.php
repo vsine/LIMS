@@ -11,8 +11,7 @@ function getMysqliObject(){
     $mysqli->set_charset("utf-8");
     return $mysqli;
 }
-function checkUser(){
-    $mysqli=getMysqliObject();
+function checkUser($mysqli){
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=$_COOKIE["username"];
         $pasw=$_COOKIE["password"];
@@ -52,8 +51,7 @@ function checkUser(){
 
 
 
-function getUserName(){
-    $mysqli=getMysqliObject();
+function getUserName( $mysqli){
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=$_COOKIE["username"];
         $pasw=$_COOKIE["password"];
@@ -71,8 +69,7 @@ function getUserName(){
 }
 
 
-function getUserMarks(){
-    $mysqli=getMysqliObject();
+function getUserMarks($mysqli){
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=$_COOKIE["username"];
         $pasw=$_COOKIE["password"];
