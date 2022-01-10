@@ -2,16 +2,17 @@
 require "../config.php";
 require "../check.php";
 
-$mysqli=getMysqliObject();
+$mysqli = getMysqliObject();
+$arr = getUserMarks($mysqli);
 
 $ca=$_GET["ca"];
 $user=$_GET["n1"];
 $pasw=$_GET["n2"];
 $user=$mysqli->real_escape_string($user);
 $pasw=$mysqli->real_escape_string($pasw);
-$limit=checkUserFromString($user,$pasw);
-if ($limit==-1)
-    exit();
+//$limit=checkUserFromString($user,$pasw);
+//if ($limit==-1)
+//    exit();
 //添加仓库
 if ($ca==1){
     $n3=$_GET["n3"];

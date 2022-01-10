@@ -92,8 +92,10 @@ function getUserMarks($mysqli){
 function set_key_exists($sett,$arr){
      $res =false;
      foreach ($arr['list'] as $key=>$value)
-           if($res=in_array($sett,$value))
+           if($res=in_array($sett,$value)){
+               $res=true;
                break;
+           }
      return $res;
 }
 
