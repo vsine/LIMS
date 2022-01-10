@@ -22,7 +22,6 @@ function libary($limit){
 
 
 
-
     $html=<<<EOR
 <!--模态框-->
   <!-- Modal -->
