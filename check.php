@@ -78,7 +78,7 @@ function getUserMarks(){
         $pasw=$_COOKIE["password"];
         $user=str_replace(' ','+',$user);
         $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
-
+        $deuser=$mysqli->real_escape_string($deuser);
         $sql="select marks from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
@@ -89,7 +89,6 @@ function getUserMarks(){
 
     }
     return "404";
-
 }
 
 
