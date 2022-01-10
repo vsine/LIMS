@@ -14,8 +14,6 @@ $html= <<<EOT
     <title>统一登录入口</title>
 </head>
 <script>
-    
-    
 </script>
 
 <link href="./css/login1.css" rel="stylesheet">
