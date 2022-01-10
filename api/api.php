@@ -21,7 +21,7 @@ if ($ca==1&&$limit<5){
     $mysqli->query($sql);
 }
 //更新仓库
-if ($ca==2&&$limit<5){
+if ($ca==2){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $sql="update place_a set place='$n4' where id='$n3'";
