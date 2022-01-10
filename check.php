@@ -53,7 +53,6 @@ function getUserName(){
         $pasw=$_COOKIE["password"];
         $user=str_replace(' ','+',$user);
         $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
-
         $sql="select name from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
@@ -61,7 +60,6 @@ function getUserName(){
         {
             return $row[0];
         }
-
     }
     return "404";
 }
