@@ -7,6 +7,8 @@ $mysqli=getMysqliObject();
 $ca=$_GET["ca"];
 $user=$_GET["n1"];
 $pasw=$_GET["n2"];
+$user=$mysqli->real_escape_string($user);
+$pasw=$mysqli->real_escape_string($pasw);
 $limit=checkUserFromString($user,$pasw);
 if ($limit==-1)
     exit();
@@ -14,6 +16,8 @@ if ($limit==-1)
 if ($ca==1&&$limit<5){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
+    $n3=$mysqli->real_escape_string($n3);
+    $n4=$mysqli->real_escape_string($n4);
     $sql="insert into place_a values ('$n3','$n4')";
     $mysqli->query($sql);
 }
@@ -21,6 +25,8 @@ if ($ca==1&&$limit<5){
 if ($ca==2){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
+    $n3=$mysqli->real_escape_string($n3);
+    $n4=$mysqli->real_escape_string($n4);
     echo $n3.'<br>';
     $sql="update place_a set place='$n4' where id='$n3'";
     echo $sql.'<br>';
@@ -30,6 +36,8 @@ if ($ca==2){
 if ($ca==3&&$limit<6){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
+    $n3=$mysqli->real_escape_string($n3);
+    $n4=$mysqli->real_escape_string($n4);
     $sql="delete from place_a where id='$n3'";
     $mysqli->query($sql);
 }
