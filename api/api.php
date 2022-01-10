@@ -14,7 +14,7 @@ $pasw=$mysqli->real_escape_string($pasw);
 //if ($limit==-1)
 //    exit();
 //添加仓库
-if ($ca==1){
+if ($ca==1&&key_exists("仓库管理",$arr)){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n3=$mysqli->real_escape_string($n3);

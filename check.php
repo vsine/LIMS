@@ -81,7 +81,7 @@ function getUserMarks($mysqli){
         $row=$redata->fetch_array();
         if($redata->num_rows>0)
         {
-            return json_decode($row[0],true); ;
+            return json_decode($row[0],true);
         }
 
     }
@@ -100,11 +100,7 @@ function set_key_exists($sett,$arr){
 }
 
 function checkUserFromString($user,$pasw){
-    $db_user=$GLOBALS['sqlUser'];
-    $db_pass=$GLOBALS['sqlPass'];
-    $db_host=$GLOBALS['sqlHost'];
-    $db_database=$GLOBALS['sqlDatabase'];
-    $mysqli=new mysqli($db_host,$db_user,$db_pass,$db_database);
+    $mysqli=getMysqliObject();
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
         $user=str_replace(' ','+',$user);
         $pasw=str_replace(' ','+',$pasw);
