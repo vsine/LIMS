@@ -92,22 +92,20 @@ function getUserMarks($mysqli){
 function set_key_exists($sett,$arr){
      $res =false;
      foreach ($arr['list'] as $key=>$value)
-           if($res=in_array($sett,$value)){
-               $res=true;
-               break;
-           }
+           if($res=in_array($sett,$value))
+               return true;
      return $res;
 }
 
-function checkUserFromString($user,$pasw){
+function checkUserFromCookie(){
     $mysqli=getMysqliObject();
     if(isset($_COOKIE["username"])&&isset($_COOKIE["password"])){
+        $user=$_COOKIE["username"];
+        $pasw=$_COOKIE["password"];
         $user=str_replace(' ','+',$user);
         $pasw=str_replace(' ','+',$pasw);
-
         $deuser=RsaUtils::privateDecrypt($user,$GLOBALS['privatekey']);
         $depasw=RsaUtils::privateDecrypt($pasw,$GLOBALS['privatekey']);
-
         $sql="select password from users where username='$deuser'";
         $redata=$mysqli->query($sql);
         $row=$redata->fetch_array();
@@ -131,5 +129,4 @@ function checkUserFromString($user,$pasw){
           return -1;
 
     }
-
 }
