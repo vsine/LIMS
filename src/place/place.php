@@ -87,7 +87,7 @@ function place_a(){
           </div>
   </div>
 </div>
-<script>
+<script type="text/javascript">
     function OnClickAdd(){
         let user=getCookie("username");
         let pasw=getCookie("password");
@@ -104,11 +104,12 @@ function place_a(){
             location.reload();
         }
     }
+    
     function OnClickEdit(id,value){
         let name=document.getElementById("iname");
-        let name1=document.getElementById("iuser");
+        let namea=document.getElementById("iuser");
         name.value=id;
-        name1.value=value;
+        namea.value=value;
     }
     function OnClickUpdate(){
         let user=getCookie("username");
