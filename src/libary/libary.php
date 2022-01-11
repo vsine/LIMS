@@ -9,9 +9,21 @@ function libary($limit){
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
                 $tr = $tr."<tr>";
-                $tr = $tr."<td>".$row[0]."</td>";
+                $tr = $tr."<td>".$row[1]."</td>";
                 $tr = $tr."<td>".$row[3]."</td>";
                 $tr = $tr."<td>".$row[4]."</td>";
+                $tr = $tr."<td>".$row[5]."</td>";
+                $tr = $tr."<td>".$row[6].$row[7]."</td>";
+                $tr = $tr."<td>".$row[2]."</td>";
+                $res2 = $mysqli->query("select aid from place_b where id=$row[8]");
+                if ($res2->num_rows>0)
+                    if ($row2=$res2->fetch_array())
+                        $res2 = $mysqli->query("select place from place_a where id=$row2[0]");
+                        if ($res2->num_rows>0)
+                            if ($row2=$res2->fetch_array())
+                                $tr = $tr."<td>".$row2[0]."</td>";
+                $tr = $tr."<td>".$row[9]."</td>";
+                $tr = $tr."<td>".$row[10]."</td>";
                 $tr = $tr."</tr>";
             }
     $html=<<<EOR
