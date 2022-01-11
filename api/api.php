@@ -86,4 +86,4 @@ if ($ca==9&&$limit<7){
     $mysqli->query($sql);
 }
 
-echo "1";
+echo $arr['title'];

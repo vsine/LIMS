@@ -1,11 +1,11 @@
 $(function(){
-    // 鍒濆鍖朿heckbox浜嬩欢
+    // 初始化checkbox事件
     $('#rememberMe').iCheck({
         checkboxClass: 'icheckbox_square-green',
         increaseArea: '20%' // optional
     });
 
-    // 鍔ㄦ€佺爜鐧婚檰鐨勬椂鍊欐牎楠屽拰杩涜鍊掕鏃�
+    // 动态码登陆的时候校验和进行倒计?
     $("#casDynamicLoginForm").find("#getDynamicCode").click(function () {
         var username = $("#casDynamicLoginForm").find("#username");
 
@@ -14,7 +14,7 @@ $(function(){
             return;
         }
         var isSliderCaptcha=$("#isSliderCaptcha").val();
-        //鍖哄垎婊戝潡楠岃瘉杩樻槸闅忔満鍥惧舰鐮侀獙璇�
+        //区分滑块验证还是随机图形码验?
         if(!isSliderCaptcha) {
             var captchaResponse = $("#casDynamicLoginForm").find("#dynamicCodeCaptchaResponse");
             if (!checkRequired(captchaResponse, "dyCpatchaError")) {
@@ -28,16 +28,16 @@ $(function(){
             }
             sendDynamicCodeByPhone(_t, "dynamicCodeType", captchaResponse.val());
         }else{
-            //鍦ㄥ彂閫佹墜鏈洪獙璇佺爜涔嬪墠 鍑虹幇婊戝潡
+            //在发送手机验证码之前 出现滑块
             $("#captcha-id").show();
-            //鐢熸垚婊戝潡楠岃瘉鐮�
+            //生成滑块验证?
             createSliderCaptcha();
-            //鍖哄垎鍔ㄦ€佺爜璺熻处鍙峰瘑鐮佺櫥褰�
+            //区分动态码跟账号密码登?
             $("#sliderCaptchaDynamicCode").val("isDynamicCode");
         }
     });
 
-    // 缁戝畾閫夐」鍗＄殑鐐瑰嚮浜嬩欢
+    // 绑定选项卡的点击事件
 //    $(".auth_tab_content_item[tabid=02]").hide();
     $(".auth_tab_links li").bind("click",function(){
         selectLi($(this));
@@ -47,12 +47,12 @@ $(function(){
 
 function loadFresh(){
     if(window != window.top){
-        // 澶勭悊鍚屽煙鍚嶄笅鐨剅eload
+        // 处理同域名下的reload
         try{
             top.location.reload(true);
         }catch(ignoreErr){
         }
-        // 澶勭悊璺ㄥ煙鎯呭喌涓嬬殑reload
+        // 处理跨域情况下的reload
         try{
             window.top.postMessage({type:"loginReload"},'*');
         }catch(ignoreErr){
