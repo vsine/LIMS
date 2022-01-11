@@ -14,7 +14,6 @@ function libary($limit){
                 $tr = $tr."<td>".$row[4]."</td>";
                 $tr = $tr."</tr>";
             }
-
     $html=<<<EOR
 <!--模态框-->
   <!-- Modal -->
