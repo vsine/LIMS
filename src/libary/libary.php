@@ -128,10 +128,15 @@ function libary($limit){
     
     $(document).ready(function() {
       $("#sel").click(function() {
-        //get request  
-        $.get("./api/api.phps?ca=0&n1=2&n2=3",function (data,state,xhr){
+        //get request  .
+        $.get("./api/api.php?ca=0&n1=2&n2=3",function (data,state,xhr){
+            //只有成功才执行
             alert(state,data);
-        }).fail(function (){alert("err")});
+        }).fail(function (){
+            //只有失败才执行
+            alert("err")
+        });
+        //get request  end.
  
       });
     });
