@@ -9,9 +9,6 @@ require "./src/class/show.php";
 $mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'test',8=>'test');
 $mysqli=getMysqliObject();
 $limit=checkUser($mysqli);
-//if (!($limit<8)){
-//    header("Location:route.php");
-//}
 $name= getUserName($mysqli);
 $arr = getUserMarks($mysqli);
 $name=$name.$arr['title'];
