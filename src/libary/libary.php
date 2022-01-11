@@ -30,6 +30,9 @@ function libary($limit){
                 $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\" id=\"sel\">选择</button>"."</td>";
                 $tr = $tr."</tr>";
             }
+
+
+
     $html=<<<EOR
   <!-- 模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
