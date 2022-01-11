@@ -31,8 +31,6 @@ function libary($limit){
                 $tr = $tr."</tr>";
             }
 
-
-
     $html=<<<EOR
   <!-- 模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
