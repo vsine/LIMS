@@ -24,7 +24,7 @@ if ($ca==1&&set_key_exists(3,$arr)){
     $mysqli->query($sql);
 }
 //更新仓库
-if ($ca==2){
+if ($ca==2&&set_key_exists(3,$arr)){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n3=$mysqli->real_escape_string($n3);
@@ -33,7 +33,7 @@ if ($ca==2){
     $mysqli->query($sql);
 }
 //删除仓库
-if ($ca==3){
+if ($ca==3&&set_key_exists(3,$arr)){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
     $n3=$mysqli->real_escape_string($n3);

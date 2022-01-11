@@ -3,6 +3,7 @@ function libary($limit){
 
     $sql = "select * from depot1";
     $mysqli = getMysqliObject();
+    $arr = getUserMarks($mysqli);
     $res = $mysqli->query($sql);
     $tr = "";
     if ($res)
@@ -24,6 +25,9 @@ function libary($limit){
                                 $tr = $tr."<td>".$row2[0]."</td>";
                 $tr = $tr."<td>".$row[9]."</td>";
                 $tr = $tr."<td>".$row[10]."</td>";
+                //操作
+                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-primary btn-sm\">选择</button>"."</td>";
+
                 $tr = $tr."</tr>";
             }
     $html=<<<EOR
@@ -82,7 +86,7 @@ function libary($limit){
               <thead>
                 <tr>
                   <th>编号</th>
-                  <th>名称</th>
+                  <th>物料名称</th>
                   <th>品牌</th>
                   <th>规格型号</th>
                   <th>数量</th>
