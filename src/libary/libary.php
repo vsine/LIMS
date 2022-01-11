@@ -128,7 +128,10 @@ function libary($limit){
     
     $(document).ready(function() {
       $("#sel").click(function() {
-        alert("test");
+        
+        $.get("./api/api.php?ca=1&n1=2&n2=3",function (data,state){
+            alert(data);
+        });
       });
     });
 </script>
