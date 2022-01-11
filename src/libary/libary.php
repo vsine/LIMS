@@ -26,8 +26,7 @@ function libary($limit){
                 $tr = $tr."<td>".$row[9]."</td>";
                 $tr = $tr."<td>".$row[10]."</td>";
                 //操作
-                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-primary btn-sm\">选择</button>"."</td>";
-
+                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\">选择</button>"."</td>";
                 $tr = $tr."</tr>";
             }
     $html=<<<EOR
