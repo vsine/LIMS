@@ -4,6 +4,7 @@ function libary($limit){
     $sql = "select * from depot1";
     $mysqli = getMysqliObject();
     $arr = getUserMarks($mysqli);
+    $isedit =$arr["editlibary"];
     $res = $mysqli->query($sql);
     $tr = "";
     if ($res)
@@ -26,13 +27,10 @@ function libary($limit){
                 $tr = $tr."<td>".$row[9]."</td>";
                 $tr = $tr."<td>".$row[10]."</td>";
                 //操作
-                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\">选择</button>"."</td>";
+                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\" id=\"sel\">选择</button>"."</td>";
                 $tr = $tr."</tr>";
             }
     $html=<<<EOR
-
-
-
   <!-- 模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -128,7 +126,9 @@ function libary($limit){
     }
     
     $(document).ready(function() {
-      
+      $("#sel").click(function() {
+        alert("test");
+      });
     });
 </script>
 EOR;
