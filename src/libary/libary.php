@@ -1,18 +1,18 @@
 <?php
 function libary($limit){
 
-    $sql="select * from depot1";
-    $mysqli=getMysqliObject();
-    $res=  $mysqli->query($sql);
-    $tr="";
+    $sql = "select * from depot1";
+    $mysqli = getMysqliObject();
+    $res = $mysqli->query($sql);
+    $tr = "";
     if ($res)
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
-                $tr=$tr."<tr>";
-                $tr=$tr."<td>".$row[0]."</td>";
-                $tr=$tr."<td>".$row[3]."</td>";
-                $tr=$tr."<td>".$row[4]."</td>";
-                $tr=$tr."</tr>";
+                $tr = $tr."<tr>";
+                $tr = $tr."<td>".$row[0]."</td>";
+                $tr = $tr."<td>".$row[3]."</td>";
+                $tr = $tr."<td>".$row[4]."</td>";
+                $tr = $tr."</tr>";
             }
 
     $html=<<<EOR
