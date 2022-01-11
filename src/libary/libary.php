@@ -128,10 +128,11 @@ function libary($limit){
     
     $(document).ready(function() {
       $("#sel").click(function() {
-        
-        $.get("./api/api.php?ca=1&n1=2&n2=3",function (data,state){
-            alert(data);
-        });
+        //get request  
+        $.get("./api/api.phps?ca=0&n1=2&n2=3",function (data,state,xhr){
+            alert(state,data);
+        }).fail(function (){alert("err")});
+ 
       });
     });
 </script>

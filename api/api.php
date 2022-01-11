@@ -1,10 +1,8 @@
 <?php
 require "../config.php";
 require "../check.php";
-
 $mysqli = getMysqliObject();
 $arr = getUserMarks($mysqli);
-
 $ca=$_GET["ca"];
 $user=$_GET["n1"];
 $pasw=$_GET["n2"];
@@ -86,4 +84,4 @@ if ($ca==9&&$limit<7){
     $mysqli->query($sql);
 }
 
-echo $arr['title'];
+//echo $arr['title'];
