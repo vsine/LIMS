@@ -31,8 +31,10 @@ function libary($limit){
                 $tr = $tr."</tr>";
             }
     $html=<<<EOR
-<!--模态框-->
-  <!-- Modal -->
+
+
+
+  <!-- 模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -55,7 +57,9 @@ function libary($limit){
     </div>
   </div>
 </div>
-
+    <!-- 模态框 end-->
+    
+    <!-- 模态框 -->
 <div class="modal fade" id="addplace" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -74,6 +78,7 @@ function libary($limit){
     </div>
   </div>
 </div>
+    <!-- 模态框 end-->
 
 <br>
 <div class="panel panel-success">
