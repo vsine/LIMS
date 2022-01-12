@@ -112,7 +112,6 @@ function checkUserFromCookie(){
         if($redata->num_rows<1)
         {
             return -1;
-
         }
         if ($row[0]==$depasw)
         {
