@@ -3,7 +3,6 @@ require_once "config.php";
 require "check.php";
 require "./src/place/place.php";
 require "./src/libary/libary.php";
-//require "home.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
 $mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'test',8=>'test');
@@ -27,7 +26,6 @@ $sel=$arr['list'][0][1];
              else
                  $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value] </a>  </li>";
          }
-
      }
      $sidebar=$sidebar.'</ul>';
  }
