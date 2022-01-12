@@ -8,7 +8,6 @@ function class_show(): string
     if ($res)
         if($res->num_rows>0)
             while ($row=$res->fetch_array()){
-
                     $tr=$tr."<tr>";
                     $tr=$tr."<td>".$row[0]."</td>";
                     $tr=$tr."<td>".$row[1]."</td>";
