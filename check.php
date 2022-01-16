@@ -1,7 +1,6 @@
 <?php
 require "config.php";
 require "RsaUtils.php";
-
 function getMysqliObject(){
     $db_user=$GLOBALS['sqlUser'];
     $db_pass=$GLOBALS['sqlPass'];
