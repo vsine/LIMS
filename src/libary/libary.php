@@ -131,7 +131,7 @@ function libary($limit){
         //get request  .
         $.get("./api/api.php?ca=0&n1=2&n2=3",function (data,state,xhr){
             //只有成功才执行
-            alert("ss");
+            alert(data);
         }).error(function (xhr,status,info){
             //只有失败才执行
             alert(status);
