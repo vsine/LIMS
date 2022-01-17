@@ -11,7 +11,7 @@ $pasw=$mysqli->real_escape_string($pasw);
 //$limit=checkUserFromString($user,$pasw);
 //if ($limit==-1)
 //    exit();
-//添加仓库
+
 
 if ($ca==1&&set_key_exists(3,$arr)){
     $n3=$_GET["n3"];
