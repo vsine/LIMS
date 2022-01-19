@@ -384,7 +384,6 @@ function place_b(){
             location.reload();
         }
     }
-
 </script>
 EOR;
     return $html;
