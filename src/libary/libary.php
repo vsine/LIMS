@@ -24,7 +24,11 @@ function libary($limit){
                         if ($res2->num_rows>0) {
                             if ($row2 = $res2->fetch_array())
                                 $tr = $tr . "<td>" . $row2[0] . "</td>";
+                        }else{
+                            $tr = $tr . "<td>" ."未选择". "</td>";
                         }
+                }else{
+                        $tr = $tr . "<td>" ."未选择". "</td>";
                 }
 
                 $tr = $tr."<td>".$row[9]."</td>";
