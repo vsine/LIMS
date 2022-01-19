@@ -83,4 +83,4 @@ if ($ca==9&&$limit<7){
     $sql="delete from class where id='$n3'";
     $mysqli->query($sql);
 }
-echo '202';
+echo '200';

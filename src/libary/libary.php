@@ -30,7 +30,10 @@ function libary($limit){
                 $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\" id=\"sel\">选择</button>"."</td>";
                 $tr = $tr."</tr>";
             }
-
+    $hcontent="";
+    if($isedit){
+        $hcontent="123";
+    }
     $html=<<<EOR
   <!-- 模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -80,7 +83,9 @@ function libary($limit){
 
 <br>
 <div class="panel panel-success">
-  <div class="panel-heading">仓库库存管理</div>
+  <div class="panel-heading"><h5>仓库库存管理</h5>
+  $hcontent
+  </div>
   <div class="panel-body">
 
    
