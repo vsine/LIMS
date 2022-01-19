@@ -148,8 +148,6 @@ EOR;
         return $html;
 }
 
-
-
 function place_b(){
     $bt="全部";
     $sql="select * from place_b order by aid";
@@ -190,7 +188,7 @@ function place_b(){
                     if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1)
                         $bt="未选择";
                 }
-                if (!isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
+                if (!(isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true)){
                         $tr=$tr."<tr>";
                         $tr=$tr."<td>".$row[0]."</td>";
                         $tr=$tr."<td>".$row[1]."</td>";
