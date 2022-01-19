@@ -153,14 +153,11 @@ EOR;
 function place_b(){
     $bt="全部";
     $sql="select * from place_b order by aid";
-    $db_host=$GLOBALS['sqlHost']; //连接的服务器地址
-    $db_user=$GLOBALS['sqlUser']; //连接数据库的用户名
-    $db_psw=$GLOBALS['sqlPass']; //连接数据库的密码
-    $db_name=$GLOBALS['sqlDatabase']; //连接的数据库名称
-    $mysqli=new mysqli($db_host,$db_user,$db_psw,$db_name);
+    $mysqli=getMysqliObject();
     if(isset($_REQUEST['fl'])){
         $gid=$_REQUEST['fl'];
         if ($gid==-1){
+            $bt="未选择";
         }else{
             $sql="select * from place_b where aid='$gid'";
             $rsql="select place from place_a where id='$gid'";
@@ -169,7 +166,8 @@ function place_b(){
             $bt=$row[0];
         }
     }
-    $res=  $mysqli->query($sql);
+
+    $res=$mysqli->query($sql);
     $tr="";
     $tr1="";
     $iss="";
