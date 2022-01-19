@@ -160,7 +160,7 @@ $html=<<<EOT
         </div>
       </div>
     </div>
-    <script>
+    <script type="text/javascript">
     $("#sett"+$sel).attr("class","active");
      function OnClick(){
          document.cookie="username=";
