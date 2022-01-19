@@ -34,5 +34,5 @@ iW5ChLxnqnjezRq4nCYPvoHMerntFNOix3GtdhY/r3nWs28RYJoFrMUNXjTCysHh
 yaFXNT+8mRokscUiUsSI0IUI4a1lSrBWv6cEEopgHuC1
 -----END RSA PRIVATE KEY-----
 KEY;
-
-
+//key configuration
+$GLOBALS["debug"]=true;

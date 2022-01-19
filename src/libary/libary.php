@@ -39,7 +39,7 @@ function libary($limit){
             }
     $hcontent="";
     if($isedit){
-        $hcontent="123";
+        $hcontent="editlibary:true";
     }
     $html=<<<EOR
   <!-- 模态框 -->
