@@ -160,6 +160,7 @@ function place_b(){
             $bt="未选择";
         }else{
             $sql="select * from place_b where aid='$gid'";
+
             $rsql="select place from place_a where id='$gid'";
             $res=  $mysqli->query($rsql);
             $row=$res->fetch_array();
@@ -189,8 +190,7 @@ function place_b(){
                     if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1)
                         $bt="未选择";
                 }
-                if (isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
-                }else{
+                if (!isset($_REQUEST['fl'])&&$_REQUEST['fl']==-1&&$k==true){
                         $tr=$tr."<tr>";
                         $tr=$tr."<td>".$row[0]."</td>";
                         $tr=$tr."<td>".$row[1]."</td>";
