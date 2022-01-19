@@ -9,10 +9,6 @@ $pasw=$_GET["n2"];
 $user=$mysqli->real_escape_string($user);
 $pasw=$mysqli->real_escape_string($pasw);
 //$limit=checkUserFromString($user,$pasw);
-//if ($limit==-1)
-//    exit();
-
-
 if ($ca==1&&set_key_exists(3,$arr)){
     $n3=$_GET["n3"];
     $n4=$_GET["n4"];
