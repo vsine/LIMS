@@ -18,12 +18,15 @@ function libary($limit){
                 $tr = $tr."<td>".$row[6].$row[7]."</td>";
                 $tr = $tr."<td>".$row[2]."</td>";
                 $res2 = $mysqli->query("select aid from place_b where id=$row[8]");
-                if ($res2->num_rows>0)
+                if ($res2->num_rows>0){
                     if ($row2=$res2->fetch_array())
                         $res2 = $mysqli->query("select place from place_a where id=$row2[0]");
-                        if ($res2->num_rows>0)
-                            if ($row2=$res2->fetch_array())
-                                $tr = $tr."<td>".$row2[0]."</td>";
+                        if ($res2->num_rows>0) {
+                            if ($row2 = $res2->fetch_array())
+                                $tr = $tr . "<td>" . $row2[0] . "</td>";
+                        }
+                }
+
                 $tr = $tr."<td>".$row[9]."</td>";
                 $tr = $tr."<td>".$row[10]."</td>";
                 //操作
