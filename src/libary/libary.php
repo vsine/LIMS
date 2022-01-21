@@ -1,6 +1,5 @@
 <?php
 function libary($limit){
-
     $sql = "select * from depot1";
     $mysqli = getMysqliObject();
     $arr = getUserMarks($mysqli);
