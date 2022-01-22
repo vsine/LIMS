@@ -40,7 +40,12 @@ function libary($limit){
 
     //输出调试信息
     if($GLOBALS["debug"]){
-        $hcontent="editlibary:".$isedit;
+        $hcontent="editlibary:".$isedit."<br>";
+    }
+
+    //编辑按钮
+    if ($isedit){
+       $hcontent=$hcontent."<button type=\"button\" class=\"btn btn-success\">添加</button>";
     }
 
 
