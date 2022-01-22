@@ -37,9 +37,13 @@ function libary($limit){
                 $tr = $tr."</tr>";
             }
     $hcontent="";
-    if($isedit){
-        $hcontent="editlibary:true";
+
+    //输出调试信息
+    if($GLOBALS["debug"]){
+        $hcontent="editlibary:".$isedit;
     }
+
+
     $html=<<<EOR
   <!-- 模态框 -->
 <div class="modal fade" id="editcp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
