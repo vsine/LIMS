@@ -6,6 +6,7 @@ require "./src/libary/libary.php";
 require "./src/user/setSuperPasw.php";
 require "./src/class/show.php";
 $mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'test',8=>'test');
+$tlist=array(0=>'海纳百川',1=>'厚德载物',2=>'有容乃大',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'轮播',8=>'test');
 $mysqli=getMysqliObject();
 $limit=checkUser($mysqli);
 $name= getUserName($mysqli);
@@ -20,11 +21,11 @@ $sel=$arr['list'][0][1];
      foreach ($value as $key=>$value)
      {
          if($key>0){
-             $navbar=$navbar."<li><a href='?sett=$value'>$mlist[$value]</a></li>";
+             $navbar=$navbar."<li><a data-toggle=\"tooltip\" data-placement=\"right\" title=\"$mlist[$value]\" href='?sett=$value'>$tlist[$value]</a></li>";
              if ($value==1)
-                 $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value] <span class='badge badge-info' style='background-color: #d9534f'>2</span></a>  </li>";
+                 $sidebar=$sidebar."<li id='sett$value'><a data-toggle=\"tooltip\" data-placement=\"right\" title=\"$mlist[$value]\" href='?sett=$value'>$tlist[$value] <span class='badge badge-info' style='background-color: #d9534f'>2</span></a>  </li>";
              else
-                 $sidebar=$sidebar."<li id='sett$value'><a href='?sett=$value'>$mlist[$value] </a>  </li>";
+                 $sidebar=$sidebar."<li id='sett$value'><a data-toggle=\"tooltip\" data-placement=\"right\" title=\"$mlist[$value]\" href='?sett=$value'>$tlist[$value] </a>  </li>";
          }
      }
      $sidebar=$sidebar.'</ul>';
@@ -138,7 +139,9 @@ $html=<<<EOT
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a class="navbar-brand" href="#"><img alt="Brand" style="width: 20px;height: 20px" src="./img/tb.png"></a>
           <a class="navbar-brand" href="#">您好，$name</a>
+          
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -174,7 +177,7 @@ $html=<<<EOT
 
 <footer class="navbar-fixed-bottom text-center">
   <div class="container">
-    <p class="text-muted"><p class="text-muted">&copy; Copyright (c) 2021 电子信息学院实训管理系统-调试站点.</p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./img/gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
+    <p class="text-muted"><p class="text-muted">&copy; Copyright (c) 2021 电子信息学院实训基地管理系统-debug point.</p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44098102441122" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="./img/gan.png" style="float:left;"/>粤公网安备 44098102441122号</a></p>
     <a style="text-align:center" href="http://beian.miit.gov.cn/" class="theme-link" rel="noopener" target="_blank">粤ICP备19125824号</a> </p>
   </div>
 </footer>
