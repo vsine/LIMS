@@ -45,7 +45,7 @@ function libary($limit){
 
     //编辑按钮
     if ($isedit){
-       $hcontent=$hcontent."<button type=\"button\" class=\"btn btn-success\">添加</button>";
+       //$hcontent=$hcontent."<button type=\"button\" class=\"btn btn-success\">添加</button>";
     }
 
 
