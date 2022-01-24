@@ -1,10 +1,9 @@
 <?php
-require_once "config.php";
-require "check.php";
-require "./src/place/place.php";
-require "./src/libary/libary.php";
-require "./src/user/setSuperPasw.php";
-require "./src/class/show.php";
+require_once "./lib/posix.php";
+require_once "./src/place/place.php";
+require_once "./src/libary/libary.php";
+require_once "./src/class/show.php";
+$headtitile=$GLOBALS["title"];
 $mlist=array(0=>'物品库存',1=>'出库单',2=>'入库单',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'test',8=>'test');
 $tlist=array(0=>'海纳百川',1=>'厚德载物',2=>'有容乃大',3=>'仓库管理',4=>'货位管理',5=>'班级管理',6=>'账号管理',7=>'轮播',8=>'test');
 $mysqli=getMysqliObject();
@@ -88,7 +87,7 @@ $html=<<<EOT
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="./img/favicon.ico">
-    <title>实训基地管理系统</title>
+    <title>$headtitile</title>
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="./css/dashboard.css" rel="stylesheet">

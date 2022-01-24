@@ -37,8 +37,5 @@ KEY;
 //key configuration
 $GLOBALS["debug"]=true;
 //全局Javascript
-$GLOBALS["javascript"]=<<<EOT
-
-EOT;
-
+$GLOBALS["title"]="实训基地基地管理系统";
 
