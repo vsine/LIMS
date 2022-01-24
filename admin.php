@@ -105,6 +105,8 @@ $html=<<<EOT
     <script src="./js/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <!-- tools-->
+    <script src="./js/tools.js"></script>
     
   </head>
   <body>

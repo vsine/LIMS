@@ -36,3 +36,9 @@ yaFXNT+8mRokscUiUsSI0IUI4a1lSrBWv6cEEopgHuC1
 KEY;
 //key configuration
 $GLOBALS["debug"]=true;
+//全局Javascript
+$GLOBALS["javascript"]=<<<EOT
+
+EOT;
+
+

@@ -22,7 +22,7 @@ $html= <<<EOT
     var pwdDefaultEncryptSalt = "le5H9abvBfaaexXw";
 </script>
 <script type="text/javascript" src="./js/jquery.min.js"></script>
-
+<script type="text/javascript" src="./js/tools.js"></script>
 <body onload="loadFresh();">
 <div class="auth_bg">
     <img src="./img/bg22.png" alt="">
@@ -150,7 +150,6 @@ $html= <<<EOT
 
 
 <script type="text/javascript" src="./js/icheck.min.js"></script>
-
 <script type="text/javascript" src="./js/login.js"></script>
 <script type="text/javascript" src="./js/login-wisedu_v1.0.js"></script>
     <script src="./js/jsencrypt.js"></script>
@@ -180,12 +179,7 @@ $html= <<<EOT
 
      }  
      if(!getCookie("username")==""){window.location.href = 'route.php';}
-      function getCookie(name)
-    {
-        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
-        if(arr != null) return unescape(arr[2]); 
-        return false;
-    }
+
 </script>
 </body>
 

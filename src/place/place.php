@@ -138,11 +138,6 @@ function place_a(){
         }
     }
     
-    function getCookie(name){
-        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
-        if(arr != null) return unescape(arr[2]); 
-        return false;
-    }
 </script>
 EOR;
         return $html;

@@ -1,6 +1,6 @@
 <?php
 function libary($limit){
-    $sql = "select * from depot1";
+    $sql = "select * from depot";
     $mysqli = getMysqliObject();
     $arr = getUserMarks($mysqli);
     $isedit =$arr["editlibary"];
@@ -140,20 +140,18 @@ function libary($limit){
     location.reload();
     }
     
-    function getCookie(name){
-        var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
-        if(arr != null) return unescape(arr[2]); 
-        return false;
-    }
+
     
     $(document).ready(function() {
       $(".btn").click(function() {
           var id=$(this).attr("id");
+          var name=$(this).parents("tr").children("td").eq(1).text();
+          
         //get request  .
         $.get("./api/api.php?ca=0&n1=2&n2=3",function (data,state,xhr){
             //只有成功才执行
             
-            alert(id);
+            alert(name);
         }).error(function (xhr,status,info){
             //只有失败才执行
             alert(status);
