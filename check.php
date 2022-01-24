@@ -26,7 +26,7 @@ function checkUser($mysqli){
         if($redata->num_rows<1) {
             setcookie("username","");
             setcookie("password","");
-            header("Location:index.php");
+            header("Location:login.php");
             exit();
         }
         if ($row[0]==$depasw) {
@@ -37,13 +37,13 @@ function checkUser($mysqli){
         }else{
             setcookie("username","");
             setcookie("password","");
-            header("Location:index.php");
+            header("Location:login.php");
             exit();
         }
     }else{
         setcookie("username","");
         setcookie("password","");
-        header("Location:index.php");
+        header("Location:login.php");
         exit("未登录");
     }
 }

@@ -8,5 +8,5 @@ $mysqli=new mysqli($db_host,$db_user,$db_pass,$db_database);
 $res=$mysqli->query("");
 setcookie("username","");
 setcookie("password","");
-header("Location:login.php");
+header("Location:_login.php");
 echo $res."ds";
