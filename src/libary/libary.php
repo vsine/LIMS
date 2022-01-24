@@ -33,7 +33,7 @@ function libary($limit){
                 $tr = $tr."<td>".$row[9]."</td>";
                 $tr = $tr."<td>".$row[10]."</td>";
                 //操作
-                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\" id=\"sel\">选择</button>"."</td>";
+                $tr = $tr."<td>"."<button type=\"button\" class=\"btn btn-success btn-sm\" data-toggle=\"modal\" data-target=\"#editcp\" id=\"$row[1]\">选择</button>"."</td>";
                 $tr = $tr."</tr>";
             }
     $hcontent="";
@@ -147,11 +147,13 @@ function libary($limit){
     }
     
     $(document).ready(function() {
-      $("#sel").click(function() {
+      $(".btn").click(function() {
+          var id=$(this).attr("id");
         //get request  .
         $.get("./api/api.php?ca=0&n1=2&n2=3",function (data,state,xhr){
             //只有成功才执行
-            alert(data);
+            
+            alert(id);
         }).error(function (xhr,status,info){
             //只有失败才执行
             alert(status);
@@ -159,6 +161,7 @@ function libary($limit){
         //get request  end.
  
       });
+      
     });
 </script>
 EOR;
